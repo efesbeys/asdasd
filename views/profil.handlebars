@@ -1,0 +1,68 @@
+<title>Active Code Profil | {{member.user.username}}</title> <br><br> <div class="container">
+    <div>
+
+      <center>
+      <a href="https://discordapp.com/users/{{member.user.id}}" class="twPc-avatarLink">
+        <img alt="Avatar" src="{{avatarURL}}" class="twPc-avatarImg">
+      </a>
+      <div class="twPc-divUser">
+        <div class="twPc-divName">
+          {{member.user.username}}
+        </div>
+
+        
+        <div class="twPc-divStats">
+        <ul class="twPc-Arrange">
+          {{#if perms.yetkili}}
+          <a href="/normal" style="text-decoration:none" class="profilbutton1"><i class="fas fa-code"></i> BDFD Kodları</a>
+       <a href="/altin"  style="text-decoration:none" class="profilbutton2"><i class="fas fa-code"></i> Aoi.js Kodları</a>
+       <a href="/elmas" style="text-decoration:none" class="profilbutton3"><i class="fas fa-code"></i> JavaScript Kodları</a>
+       <a href="/hazir" style="text-decoration:none" class="profilbutton4"><i class="fas fa-code"></i> Hazır Altyapılar</a>
+          {{else}}
+            {{#if perms.destekçi}}
+          <a href="/normal" style="text-decoration:none" class="profilbutton1"><i class="fas fa-code"></i> BDFD Kodları</a>
+            <a href="/altin"  style="text-decoration:none" class="profilbutton2"><i class="fas fa-code"></i> Aoi.js Kodları</a>
+            <a href="/elmas" style="text-decoration:none" class="profilbutton3"><i class="fas fa-code"></i> JavaScript Kodları</a>
+            <a href="/hazir" style="text-decoration:none" class="profilbutton4"><i class="fas fa-code"></i> Hazır Altyapılar</a>
+            {{else}}
+              {{#if perms.normal}}
+            <a href="/normal" style="text-decoration:none" class="profilbutton1"><i class="fas fa-code"></i> BDFD Kodları </a>
+          {{/if}}
+              {{#if perms.altin}}
+            <a href="/altin"  style="text-decoration:none" class="profilbutton2"><i class="fas fa-code"></i> Aoi.js Kodları</a>
+              {{/if}}
+              {{#if perms.elmas}}
+            <a href="/elmas" style="text-decoration:none" class="profilbutton3"><i class="fas fa-code"></i> JavaScript Kodları</a>
+              {{/if}}
+              {{#if perms.hazir}}
+           <a href="/hazir" style="text-decoration:none" class="profilbutton4"><i class="fas fa-code"></i> Hazır Altyapılar</a>
+              {{/if}}
+            {{/if}}
+          {{/if}}  
+        </ul>
+      </div>
+        
+<hr>
+                <span>
+        {{#if perms.sahip}}
+            <span>Site Sahibi</span>
+        {{else}}
+          {{#if perms.yetkili}}
+            <span>Kod Paylaşım Yetkilisi</span>
+          {{else}}
+            {{#if perms.destekçi}}
+              <span>Active Booster (Destekçi)</span>
+            {{else}}
+              <span>Kullanıcı</span>
+            {{/if}}
+          {{/if}}
+        {{/if}}
+        </span>
+    </div>
+        
+        Paylaştığı <font color="red">ve</font> Yardım Ettiği Kodlar ( <font color="#0069d9">{{#if stats}} {{stats.paylasilan}} {{/if}} </font> )
+
+  </div>
+      </center>
+</div>
+
